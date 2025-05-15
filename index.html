@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yummy</title>
+
+    <!-- !font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- side bar -->
+    <nav class="side-bar d-flex min-vh-100 position-fixed">
+        <div class="left-part p-4 bg-black text-white d-flex flex-column justify-content-between">
+            <div class="links">
+                <ul class="p-0">
+                    <li class="py-2" id="search"> <a href="#" class="text-white">Search</a> </li>
+                    <li class="py-2" id="categories"> <a href="#" class="text-white">Categories</a> </li>
+                    <li class="py-2" id="area"> <a href="#" class="text-white">Area</a> </li>
+                    <li class="py-2" id="ingredients"> <a href="#" class="text-white">Ingredients</a> </li>
+                    <li class="py-2" id="contact"> <a href="#" class="text-white">Contact Us</a> </li>
+                </ul>
+            </div>
+
+            <div>
+                <div class="social-links">
+                    <ul class="p-0 d-flex justify-content-around">
+                        <li> <a href="https://facebook.com" class="text-white"><i class="fa-brands fa-facebook"></i></a> </li>
+                        <li> <a href="https://twitter.com" class="text-white"><i class="fa-brands fa-twitter"></i></a> </li>
+                        <li> <a href="#" class="text-white"><i class="fa-solid fa-globe"></i></a> </li>
+                    </ul>
+                </div>
+
+                <div class="copyrights text-center">
+                    <p>Copyright Â© 2019 All Rights <br> Reserved.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-part py-4 px-2 d-flex flex-column justify-content-between bg-white">
+            <div class="image">
+                <img class="w-100" src="images/logo.png" alt="website logo">
+            </div>
+            <div class="menu d-flex justify-content-center">
+                <i class="fa-solid fa-bars" id="menu"></i>
+                <i class="fa-solid fa-xmark d-none" id="menuClose"></i>
+            </div>
+            <div class="group-icons d-flex flex-column justify-content-center gap-2 align-items-center">
+                <i class="fa-solid fa-globe"></i>
+                <i class="fa-solid fa-share-nodes"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="loader-container position-fixed top-0 start-0 end-0 bottom-0 d-flex align-items-center justify-content-center">
+        <span class="loader"></span>
+    </div>
+
+    <main class="bg-black min-vh-100 py-5">
+        <div class="container d-flex align-items-center justify-content-center flex-wrap">
+            <div class="row row-cols-1 row-cols-md-2 g-3 search-inputs w-100 d-none mb-4">
+                <div class="col">
+                    <input type="text" placeholder="Search By Name" class="form-control d-block w-100" id="searchByName"/>
+                </div>
+                <div class="col">
+                    <input type="text" placeholder="Search By First Letter" class="form-control w-100" id="searchByFirstLetter"/>
+                </div>
+            </div>
+
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 main-container g-5"></div>
+
+            <div class="row meal-section d-none"></div>
+
+            <div class="contact-section row d-flex align-items-center justify-content-center g-4 w-75 d-none">
+                <div class="col-md-6">
+                    <div>
+                        <input type="text" placeholder="Enter Your Name" class="form-control"  id="userName"/>
+                    </div>
+                    <p class="error-message d-none" id="userNameErrorMessage">! The name must be between 3 and 15 characters long and can contain up to 5 names</p>
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        <input type="email" placeholder="Enter Your Email" class="form-control" id="email"/>
+                    </div>
+                    <p class="error-message d-none" id="emailErrorMessage">! The email must be valid</p>
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        <input type="tel" placeholder="Enter Your Phone" class="form-control" id="phone"/>
+                    </div>
+                    <p class="error-message d-none" id="phoneErrorMessage">! The phone number must be valid</p>
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        <input type="number" min="13" placeholder="Enter Your Age" class="form-control" id="age"/>
+                    </div>
+                    <p class="error-message d-none" id="ageErrorMessage">! You must be over 13 years old</p>
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        <input type="password" placeholder="Enter Your Password" class="form-control" id="password"/>
+                    </div>
+                    <p class="error-message d-none" id="passwordErrorMessage">! Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character</p>
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        <input type="password" placeholder="Repassword" class="form-control" id="confirmPassword"/>
+                    </div>
+                    <p class="error-message d-none" id="confirmPasswordErrorMessage">! Password and confirm password must be the same</p>
+                </div>
+                <div class="col">
+                    <div class="d-flex justify-content-center">
+                        <button class="rounded" type="submit" id="submitButton">Submit</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
